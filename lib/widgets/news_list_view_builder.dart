@@ -39,7 +39,7 @@ class _NewListViewBluiderState extends State<NewListViewBluider> {
             : const SliverToBoxAdapter(
                 child: Center(
                   child: Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(10.0),
                     child: Text(
                         "oops! No News Found  Plese Try Again or  check your connection",
                         style: TextStyle(
