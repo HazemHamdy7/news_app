@@ -44,7 +44,7 @@ class NewsTitle extends StatelessWidget {
             height: 8,
           ),
           Text(
-            articleModel.subTitle!,
+            articleModel.subTitle ?? 'Waiting for get News',
             maxLines: 2,
             style: const TextStyle(color: Colors.grey, fontSize: 14),
           )

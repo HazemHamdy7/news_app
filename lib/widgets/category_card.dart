@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:news_app_finish/model/category_model.dart';
 
+import '../views/category_view.dart';
+
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     Key? key,
@@ -16,7 +18,11 @@ class CategoryCard extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.all(8.0),
         child: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const CategoryView();
+            }));
+          },
           child:
 
               //  ClipRRect(
