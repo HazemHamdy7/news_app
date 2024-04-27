@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:news_app_finish/model/category_model.dart';
+import 'package:news_app_finish/widgets/webview.dart';
 
 import '../views/category_view.dart';
 
@@ -19,9 +20,19 @@ class CategoryCard extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: GestureDetector(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const CategoryView();
-            }));
+            // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            //   return const WebView();
+            // }));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return CategoryView(
+                    category: categoryModel.categoryName! ?? 'No Category',
+                  );
+                },
+              ),
+            );
           },
           child:
 

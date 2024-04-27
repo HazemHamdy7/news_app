@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:news_app_finish/model/article_model.dart';
 
 class NewsTitle extends StatelessWidget {
@@ -16,14 +17,19 @@ class NewsTitle extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Card(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(6),
-              child: Image.network(
-                articleModel.image ?? "No Image",
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.fill,
+          GestureDetector(
+            onTap: () {
+              
+            },
+            child: Card(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(6),
+                child: Image.network(
+                  articleModel.image ?? "No Image",
+                  height: 200,
+                  width: double.infinity,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           ),

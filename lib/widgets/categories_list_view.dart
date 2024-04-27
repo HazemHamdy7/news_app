@@ -5,26 +5,48 @@ import '../model/category_model.dart';
 import '../services/news_service.dart';
 import 'category_card.dart';
 
-class TopHeadLineCard extends StatefulWidget {
-  const TopHeadLineCard({super.key});
+class CatrgoryListView extends StatefulWidget {
+  const CatrgoryListView({super.key});
 
   @override
-  State<TopHeadLineCard> createState() => _TopHeadLineCardState();
+  State<CatrgoryListView> createState() => _CatrgoryListViewState();
 }
 
-class _TopHeadLineCardState extends State<TopHeadLineCard> {
-  List<CategoryModel> categoryarticles = [];
+class _CatrgoryListViewState extends State<CatrgoryListView> {
+  List<CategoryModel> categoryarticles = [
+    CategoryModel(
+      image: 'assets/technology.jpeg',
+      categoryName: 'General',
+    ),
+    CategoryModel(
+      image: 'assets/technology.jpeg',
+      categoryName: 'business',
+    ),
+    CategoryModel(
+      image: 'assets/technology.jpeg',
+      categoryName: 'Entertainment',
+    ),
+    CategoryModel(
+      image: 'assets/technology.jpeg',
+      categoryName: 'Sports',
+    ),
+    CategoryModel(
+      image: 'assets/technology.jpeg',
+      categoryName: 'Technology',
+    ),
+  ];
 
-  @override
-  void initState() {
-    super.initState();
-    getGeneralNewss();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   getGeneralNewss();
+  // }
 
-  Future<void> getGeneralNewss() async {
-    categoryarticles = await NewsService(Dio()).getCategory();
-    setState(() {});
-  }
+  // Future<void> getGeneralNewss() async {
+  //   categoryarticles =
+  //       await NewsService(Dio()).getNews(categoryName: categoryarticles);
+  //   setState(() {});
+  // }
 
   @override
   Widget build(BuildContext context) {

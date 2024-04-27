@@ -1,12 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+
 import 'package:news_app_finish/model/article_model.dart';
+
 import '../services/news_service.dart';
 import 'news_list_view.dart';
 
 class NewListViewBluider extends StatefulWidget {
-  const NewListViewBluider({super.key});
+  const NewListViewBluider({
+    Key? key,
+    required this.categroy,
+  }) : super(key: key);
 
+  final String categroy;
   @override
   State<NewListViewBluider> createState() => _NewListViewBluiderState();
 }
@@ -19,7 +26,7 @@ class _NewListViewBluiderState extends State<NewListViewBluider> {
   void initState() {
     super.initState();
     future = NewsService(Dio()).getNews(
-      categoryName: 'general',
+      categoryName: widget.categroy,
     );
   }
 
@@ -43,8 +50,7 @@ class _NewListViewBluiderState extends State<NewListViewBluider> {
             return const SliverToBoxAdapter(
                 child: Center(
                     child: CircularProgressIndicator(
-              backgroundColor: Colors.indigo,
-            )));
+                        backgroundColor: Colors.indigo)));
           }
         });
   }
